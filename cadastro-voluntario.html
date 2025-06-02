@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Voluntário - Drone Solidário</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Voluntário</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastro-regiao.html">Cadastro de Regiões</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Preencha o formulário abaixo para se cadastrar como voluntário</h2>
+            <form id="volunteerForm">
+                <label for="fullName">Nome completo:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="droneModel">Modelo do drone:</label>
+                <input type="text" id="droneModel" name="droneModel" required>
+
+                <label for="flightCapabilities">Capacidades de voo:</label>
+                <input type="text" id="flightCapabilities" name="flightCapabilities" placeholder="Tempo e raio de alcance" required>
+
+                <label for="location">Localização geográfica:</label>
+                <input type="text" id="location" name="location" required>
+
+                <button type="submit">Salvar meu cadastro</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Drone Solidário. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

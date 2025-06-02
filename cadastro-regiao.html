@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Região - Drone Solidário</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Região</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastro-voluntario.html">Cadastre-se como Voluntário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Informe os dados da região</h2>
+            <form id="form-regiao">
+                <label for="nome-regiao">Nome da Região:</label>
+                <input type="text" id="nome-regiao" name="nome-regiao" required>
+
+                <label for="descricao">Descrição da Região:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <label for="localizacao">Localização Geográfica:</label>
+                <input type="text" id="localizacao" name="localizacao" required>
+
+                <label for="contato">Contato para Emergências:</label>
+                <input type="text" id="contato" name="contato" required>
+
+                <button type="submit">Salvar Cadastro da Região</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Drone Solidário. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
