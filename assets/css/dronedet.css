@@ -1,0 +1,22 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  h1, h2 {
+    font-weight: 600;
+  }
+  
+  .drone-img {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  #imagemPreview {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
