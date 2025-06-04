@@ -155,7 +155,7 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
 
 
     this.reset();
-    window.location.href = "maindrones.html";
+    window.location.href = "mainCadDrones.html";
     // window.location.href = `maindrones.html?modelo=${modeloPersonalizado}`;
 
 });

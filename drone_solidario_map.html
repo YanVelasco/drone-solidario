@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Solidário – Mapeamento aéreo para salvar vidas</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./assets/css/styleNew.css">
+  <link rel="stylesheet" href="../assets/css/dronemain.css" />
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->  
+</head>
+<body class="bg-light text-center py-5 tema-drone-futuristahome">
+
+  <header>
+    <h1>Drone Solidário</h1>
+    <p>Mapeamento aéreo para salvar vidas. Junte-se a nós e ajude a coletar imagens e dados essenciais para operações de resgate.</p>
+    <!-- <div class="button-container">
+      <a href="./pages/mainCadDrones.html" class="main-btn">Cadastre-se como voluntário</a>
+      <a href="cadastro-regiao.html" class="main-btn secondary">Saiba mais sobre o projeto</a>
+    </div> -->
+    <div class="button-container">
+        <a href="./pages/mainCadDrones.html" class="main-btn">Cadastre-se como voluntário</a>
+        <a href="#" class="main-btn secondary">Saiba mais sobre o projeto</a>
+      </div>      
+  </header>
+
+    <!-- Mapa 1: Eventos do projeto -->
+     <!-- <div id="map"></div> -->
+     <!-- Mapa 1: Eventos do projeto -->
+        <h2 style="text-align: center;">Eventos do Projeto</h2>
+        <div id="map-eventos" class="map-container"></div>
+
+
+  <!-- Eventos fixos -->
+  <section class="eventos">
+    <h2>Eventos no Mapa</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔥 Incêndio Florestal - Cuiabá - MT</h3>
+        <p><strong>Data:</strong> 02/06/2025</p>
+        <p><strong>Área afetada:</strong> 120 hectares</p>
+        <p><strong>Situação:</strong> O incêndio foi parcialmente controlado após a atuação de brigadistas e apoio aéreo. A área segue em monitoramento, com risco moderado de reignição devido à baixa umidade e ventos constantes.</p>
+      </div>
+      <div class="card">
+        <h3>🌊 Enchente - Porto Alegre - RS</h3>
+        <p><strong>Data:</strong> 28/05/2025</p>
+        <p><strong>Famílias afetadas:</strong> 300</p>
+        <p><strong>Situação:</strong> As fortes chuvas causaram alagamentos em diversos bairros, forçando a evacuação de centenas de famílias. Equipes da Defesa Civil atuam no resgate e na distribuição de mantimentos. A cidade permanece em estado de alerta, com previsão de mais chuvas nos próximos dias </p>
+      </div>
+      <!-- Adicione mais cards conforme necessário -->
+    </div>
+
+  <!-- </section>
+  <section class="voluntarios">
+    <h2>Voluntários em Ação</h2>
+    <div class="grid-voluntarios">
+      <div class="voluntario-card">
+        <p><strong>Drone:</strong> DJI Mavic 3</p>
+        <p><strong>Nome:</strong> Ana Souza</p>
+        <p><strong>Localidade:</strong> Cuiabá - MT</p>
+        <p><strong>Situação:</strong> Em operação</p>
+        <p><strong>Câmera:</strong> <a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a></p>
+      </div>
+      <div class="voluntario-card">
+        <p><strong>Drone:</strong> Phantom 4 Pro</p>
+        <p><strong>Nome:</strong> Carlos Lima</p>
+        <p><strong>Localidade:</strong> Porto Alegre - RS</p>
+        <p><strong>Situação:</strong> Aguardando missão</p>
+        <p><strong>Câmera:</strong> <a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a></p>
+      </div>
+    </div>
+  </section> -->
+  
+  <!-- <section class="voluntarios">
+    <h2>Voluntários em Ação</h2>
+    <ul class="lista-voluntarios">
+      <li>
+        <strong>Drone:</strong> DJI Mavic 3<br>
+        <strong>Nome:</strong> Ana Souza<br>
+        <strong>Localidade:</strong> Cuiab:á - MT<br>
+        <strong>Situação:</strong> Em operação<br>
+        <strong>Câmera:</strong> <a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a>
+      </li>
+      <li>
+        <strong>Drone:</strong> Phantom 4 Pro<br>
+        <strong>Nome:</strong> Carlos Lima<br>
+        <strong>Localidade:</strong> Porto Alegre - RS<br>
+        <strong>Situação:</strong> Aguardando missão<br>
+        <strong>Câmera:</strong> <a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a>
+      </li>
+    </ul>
+  </section> -->
+
+  <section class="voluntarios">
+    <h2>Voluntários em Ação</h2>
+    <div class="tabela-container">
+      <table class="tabela-voluntarios">
+        <thead>
+          <tr>
+            <th>Drone</th>
+            <th>Nome</th>
+            <th>Localidade</th>
+            <th>Situação</th>
+            <th>Câmera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>DJI Mavic 3</td>
+            <td>Ana Souza</td>
+            <td>Cuiabá - MT</td>
+            <td>Em operação</td>
+            <td><a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a></td>
+          </tr>
+          <tr>
+            <td>Phantom 4 Pro</td>
+            <td>Carlos Lima</td>
+            <td>Porto Alegre - RS</td>
+            <td>Aguardando missão</td>
+            <td><a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a></td>
+          </tr> -->
+            <tr>
+              <td data-label="Drone">DJI Mavic 3</td>
+              <td data-label="Nome">Ana Souza</td>
+              <td data-label="Localidade">Cuiabá - MT</td>
+              <td data-label="Situação">Em operação</td>
+              <td data-label="Câmera">
+                <a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Drone">Phantom 4 Pro</td>
+              <td data-label="Nome">Carlos Lima</td>
+              <td data-label="Localidade">Porto Alegre - RS</td>
+              <td data-label="Situação">Aguardando missão</td>
+              <td data-label="Câmera">
+                <a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a>
+              </td>
+            </tr>          
+          <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+      </table>
+    </div>
+  </section> 
+
+    <!-- Mapa 2: Dados públicos (ex: INPE) -->
+    <!-- <div id="map-publico" class="map-container"></div> -->
+        <!-- Mapa 2: Dados públicos (ex: INPE) -->
+        <h2 style="text-align: center;">Dados Públicos (INPE)</h2>
+        <div id="map-publico" class="map-container"></div>
+
+  <!-- Notícias -->
+  <section class="noticias">
+    <h2>Notícias Recentes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Drone ajuda a localizar vítimas em área alagada</h3>
+        <p>Uma equipe de voluntários utilizou drones para mapear áreas de risco no sul do país.</p>
+      </div>
+      <div class="card">
+        <h3>Nova parceria com Defesa Civil</h3>
+        <p>O projeto Drone Solidário firmou parceria com a Defesa Civil para ampliar a cobertura nacional.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Drone Solidário. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/mapEvent.js"></script>
+</body>
+</html>
