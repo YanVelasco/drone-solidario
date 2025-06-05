@@ -1,0 +1,6 @@
+latitude,longitude,estado,municipio,data_hora,tipo_evento
+-23.5,-46.6,SP,São Paulo,2025-06-01 08:00:00,acidente
+-22.9,-43.2,RJ,Rio de Janeiro,2025-06-02 09:00:00,acidente
+-19.9,-43.9,MG,Belo Horizonte,2025-06-03 10:00:00,acidente
+-25.4,-49.3,PR,Curitiba,2025-06-04 11:00:00,acidente
+-30.0,-51.2,RS,Porto Alegre,2025-06-05 12:00:00,acidente

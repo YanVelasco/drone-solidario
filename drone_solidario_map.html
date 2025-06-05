@@ -100,29 +100,17 @@
             <th>Drone</th>
             <th>Nome</th>
             <th>Localidade</th>
+            <th>Evento</th>
             <th>Situação</th>
             <th>Câmera</th>
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <td>DJI Mavic 3</td>
-            <td>Ana Souza</td>
-            <td>Cuiabá - MT</td>
-            <td>Em operação</td>
-            <td><a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a></td>
-          </tr>
-          <tr>
-            <td>Phantom 4 Pro</td>
-            <td>Carlos Lima</td>
-            <td>Porto Alegre - RS</td>
-            <td>Aguardando missão</td>
-            <td><a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a></td>
-          </tr> -->
             <tr>
               <td data-label="Drone">DJI Mavic 3</td>
               <td data-label="Nome">Ana Souza</td>
               <td data-label="Localidade">Cuiabá - MT</td>
+              <td data-label="Evento">Incêndio Florestal</td>
               <td data-label="Situação">Em operação</td>
               <td data-label="Câmera">
                 <a href="https://link-da-camera-ao-vivo.com" target="_blank">Ver transmissão</a>
@@ -132,6 +120,7 @@
               <td data-label="Drone">Phantom 4 Pro</td>
               <td data-label="Nome">Carlos Lima</td>
               <td data-label="Localidade">Porto Alegre - RS</td>
+              <td data-label="Evento">Enchente</td>
               <td data-label="Situação">Aguardando missão</td>
               <td data-label="Câmera">
                 <a href="https://link-da-gravacao.com" target="_blank">Ver gravação</a>
@@ -146,8 +135,61 @@
     <!-- Mapa 2: Dados públicos (ex: INPE) -->
     <!-- <div id="map-publico" class="map-container"></div> -->
         <!-- Mapa 2: Dados públicos (ex: INPE) -->
-        <h2 style="text-align: center;">Dados Públicos (INPE)</h2>
-        <div id="map-publico" class="map-container"></div>
+          <!-- <h2 style="text-align: center;">Dados Públicos (INPE)</h2>
+            <p id="contador-focos" style="text-align:center; font-weight:bold; margin-bottom:10px;">
+              Carregando focos de queimadas...
+            </p>        
+          <div id="map-publico" class="map-container"></div> -->
+          <h2 style="text-align: center;">Dados Públicos (INPE)</h2>
+
+          <!-- <div style="text-align:center; font-weight:bold; margin-bottom:10px;">
+            <p id="contador-focos">Carregando focos de queimadas...</p>
+            <p id="contador-enchentes">Carregando dados de enchentes...</p>
+            <p id="contador-vendavais">Carregando dados de vendavais...</p>
+            <p id="contador-deslizamentos"></p>
+            <p id="contador-acidentes"></p>
+            <p id="contador-alertas-saude"></p>
+          </div> -->
+
+          <div id="map-publico" class="map-container"></div>
+          
+          
+        <div class="tabela-status-container">
+          <table class="tabela-status-eventos">
+            <thead>
+              <tr>
+                <th><strong>Tipo</strong></th>
+                <th><strong>Status</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Focos de queimadas</td>
+                <td id="contador-focos">Carregando focos de queimadas...</td>
+              </tr>
+              <tr>
+                <td>Enchentes</td>
+                <td id="contador-enchentes">Carregando dados de enchentes...</td>
+              </tr>
+              <tr>
+                <td>Vendavais</td>
+                <td id="contador-vendavais">Carregando dados de vendavais...</td>
+              </tr>
+              <tr>
+                <td>Deslizamentos</td>
+                <td id="contador-deslizamentos"></td>
+              </tr>
+              <tr>
+                <td>Acidentes</td>
+                <td id="contador-acidentes"></td>
+              </tr>
+              <tr>
+                <td>Alertas de Saúde</td>
+                <td id="contador-alertas-saude"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>                 
 
   <!-- Notícias -->
   <section class="noticias">
@@ -164,12 +206,91 @@
     </div>
   </section>
 
+  <!-- <div class="dados-oficiais">
+    <h3>Fontes Oficiais de Monitoramento</h3>
+    <ul>
+      <li>
+        <strong>INPE – Programa Queimadas:</strong>
+        <a href="https://terrabrasilis.dpi.inpe.br/queimadas/portal/dados-abertos/" target="_blank">
+          Acesso aos dados em tempo quase real sobre focos de queimadas e risco de fogo
+        </a>
+      </li>
+      <li>
+        <strong>IBAMA – Monitoramento Ambiental:</strong>
+        <a href="https://www.gov.br/ibama" target="_blank">
+          Informações sobre fiscalização, áreas protegidas e impactos ambientais
+        </a>
+      </li>
+      <li>
+        <strong>Defesa Civil Nacional:</strong>
+        <a href="https://www.gov.br/defesacivil" target="_blank">
+          Alertas e relatórios sobre enchentes, deslizamentos e vendavais
+        </a>
+      </li>
+      <li>
+        <strong>Atlas Digital de Desastres no Brasil:</strong>
+        <a href="https://www.gov.br/mdr/pt-br/noticias/atlas-digital-de-desastres-no-brasil-e-atualizado-com-dados-consolidados-de-2024" target="_blank">
+          Histórico e estatísticas de desastres naturais no país
+        </a>
+      </li>
+      <li>
+        <strong>Ministério da Saúde – Alertas de Saúde Pública:</strong>
+        <a href="https://www.gov.br/saude" target="_blank">
+          Boletins sobre surtos, epidemias e impactos climáticos na saúde
+        </a>
+      </li>
+    </ul>
+  </div>   -->
+
+  <div class="tabela-fontes-container">
+    <table class="tabela-fontes-oficiais">
+      <thead>
+        <tr>
+          <th>Órgão</th>
+          <th>Área de Atuação</th>
+          <th>Link Oficial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>INPE</strong></td>
+          <td>Monitoramento de queimadas e risco de fogo</td>
+          <td><a href="https://terrabrasilis.dpi.inpe.br/queimadas/portal/dados-abertos/" target="_blank">Acessar dados</a></td>
+        </tr>
+        <tr>
+          <td><strong>IBAMA</strong></td>
+          <td>Fiscalização ambiental e áreas protegidas</td>
+          <td><a href="https://www.gov.br/ibama" target="_blank">Acessar site</a></td>
+        </tr>
+        <tr>
+          <td><strong>Defesa Civil</strong></td>
+          <td>Alertas sobre enchentes, deslizamentos e vendavais</td>
+          <td><a href="https://www.gov.br/defesacivil" target="_blank">Acessar alertas</a></td>
+        </tr>
+        <tr>
+          <td><strong>Atlas de Desastres</strong></td>
+          <td>Histórico e estatísticas de desastres naturais</td>
+          <td><a href="https://www.gov.br/mdr/pt-br/noticias/atlas-digital-de-desastres-no-brasil-e-atualizado-com-dados-consolidados-de-2024" target="_blank">Ver atlas</a></td>
+        </tr>
+        <tr>
+          <td><strong>Ministério da Saúde</strong></td>
+          <td>Boletins sobre saúde pública e impactos climáticos</td>
+          <td><a href="https://www.gov.br/saude" target="_blank">Acessar boletins</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
+
   <footer>
     <p>&copy; 2025 Drone Solidário. Todos os direitos reservados.</p>
   </footer>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="./assets/js/mapEvent.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <!-- <script src="./assets/js/mapEvent.js"></script> -->
+  <script src="./assets/js/mapEventDiv.js"></script>
+  <script src="./assets/dados/queimadas_brasil_24h.csv"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script> -->
 </body>
 </html>

@@ -1,3 +1,5 @@
+/* css inicial do home */
+
 .seletor {
     -webkit-user-select: none; 
     -moz-user-select: none;    
@@ -15,13 +17,13 @@
 }
 
 
-.leaflet-control-layers {
+/* .leaflet-control-layers {
     background-color: white !important;
     color: black !important;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     font-family: Arial, sans-serif;
     font-size: 14px;
-}
+} */
 
 .leaflet-container .leaflet-control-layers {
     background-color: white !important;
@@ -59,7 +61,7 @@
   }
   
 
-/* Novo */
+/* Novo após ajustes no home */
 
 body {
   font-family: Arial, sans-serif;
@@ -311,48 +313,6 @@ h2 {
   font-size: 1.2em;
 }
 
-/* @media (max-width: 600px) {
-  .tabela-voluntarios, 
-  .tabela-voluntarios thead, 
-  .tabela-voluntarios tbody, 
-  .tabela-voluntarios th, 
-  .tabela-voluntarios td, 
-  .tabela-voluntarios tr {
-    display: block;
-    width: 100%;
-  }
-
-  .tabela-voluntarios thead tr {
-    display: none;
-  }
-
-  .tabela-voluntarios td {
-    position: relative;
-    padding-left: 50%;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-  }
-
-  .tabela-voluntarios td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-}
-
-.tabela-voluntarios tbody tr {
-  display: block;
-  margin-bottom: 10px;
-  border: 1px solid #004d40;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 10px;
-  background-color: #fff;
-} */
-
 @media (max-width: 600px) {
 
   .tabela-voluntarios thead tr {
@@ -386,5 +346,97 @@ h2 {
     font-weight: bold;
     white-space: nowrap;
   }
+}
+
+.leaflet-control-layers-overlays label {
+  font-size: 10px; /* ou o tamanho que quiser, por exemplo, 0.8em */
+}
+
+/* .tabela-status-eventos  */
+
+.tabela-status-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.tabela-status-eventos {
+  width: auto;
+  min-width: 300px;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-align: left;
+  background-color: white;
+}
+
+.tabela-status-eventos th,
+.tabela-status-eventos td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.tabela-status-eventos th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tabela-status-eventos tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-status-eventos tr:hover {
+  /* background-color: #f1f1f1; */
+  background-color: #e6f7ff;
+}
+
+
+ /* .dados-oficiais  */
+
+.tabela-fontes-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.tabela-fontes-oficiais {
+  width: auto;
+  min-width: 300px;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  background-color: white;
+}
+
+.tabela-fontes-oficiais th,
+.tabela-fontes-oficiais td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-fontes-oficiais th {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.tabela-fontes-oficiais tr:hover {
+  background-color: #f0f8ff;
+}
+
+.tabela-fontes-oficiais a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.tabela-fontes-oficiais a:hover {
+  text-decoration: underline;
 }
 
