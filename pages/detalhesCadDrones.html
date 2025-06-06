@@ -81,6 +81,7 @@
       </div>
 
       <input type="hidden" name="modelo" id="modeloDrone" />
+      <input type="hidden" name="nomeFinal" id="nomeFinal" />
 
       <div id="uploadImagemContainer" style="display: none;">
         <div class="col-md-12 mt-4">
@@ -111,24 +112,39 @@
 
   <script src="../assets/js/dronemain.js"></script>
   <script src="../assets/js/dronenew.js"></script>
-  <script>
+  <!-- <script>
   document.getElementById('cadastroForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const dados = {
-          nome: this.nome.value,
-          telefone: this.telefone.value,
-          email: this.email.value,
-          regiao: this.regiao.value,
-          experiencia: this.experience.value,
-          modelo: this.modelo.value || this.modeloDrone.value || ''
-      };
-      // Salva diretamente no localStorage para persistência
-      let lista = JSON.parse(localStorage.getItem("droneiros-solidarios-tabela") || "[]");
-      lista.push(dados);
-      localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(lista));
-      alert('Cadastro salvo na gestão de droneiros solidários!');
-  });
-  </script>
+    e.preventDefault();
+
+    // Pega o valor do modelo do drone (campo hidden "modelo")
+    const modeloDrone = this.modelo.value.trim();
+
+    // Aqui você define o valor de nomeFinal conforme sua regra
+    // Por exemplo, usar o próprio modelo se existir
+    let nomeFinalVal = modeloDrone;
+
+    // Atualiza o campo hidden antes de pegar os dados
+    this.nomeFinal.value = nomeFinalVal;
+
+    // Agora pode criar o objeto dados com os campos já atualizados
+    const dados = {
+        nome: this.nome.value,
+        telefone: this.telefone.value,
+        email: this.email.value,
+        regiao: this.regiao.value,
+        experiencia: this.experience.value,
+        modelo: this.modelo.value || this.nomeFinal.value || ''
+    };
+
+    // Salva no localStorage
+    let lista = JSON.parse(localStorage.getItem("droneiros-solidarios-tabela") || "[]");
+    lista.push(dados);
+    localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(lista));
+
+    alert('Cadastro salvo na gestão de droneiros solidários!');
+});
+
+  </script> -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-texto">

@@ -68,4 +68,5 @@ function loadDrones() {
     });    
 }
 
-window.onload = loadDrones;
+// window.onload = loadDrones;
+document.addEventListener('DOMContentLoaded', loadDrones);
