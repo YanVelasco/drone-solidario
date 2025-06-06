@@ -1,0 +1,226 @@
+@import url(https://db.onlinewebfonts.com/c/2db95998b1dbd7d0d2f25ea8ad9968d4?family=GN-Kin-iro_SansSerif);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+
+body {
+  background-color:#ffffff;
+  color: #181D31;
+
+} 
+
+
+ header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #28a745;
+      padding: 10px 40px;
+      color: #ffffff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .nav-home {
+      display: flex;
+      gap: 25px;
+            color: white;
+
+    }
+
+    .nav-home a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    
+    .nav-home a:hover {
+      color: #20592c;
+      text-decoration: bold;
+
+    }
+
+    .accessibility-tools {
+  display: flex;
+  gap: 10px;
+}
+
+.accessibility-tools button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+  font-size: 10px;
+}
+
+.accessibility-tools button:hover {
+  color: #20592c;
+  border-color: #20592c;
+
+  
+}
+
+
+
+.top-header {
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 60px 20px 100px; 
+      position: relative;
+    }
+
+    .top-header h1 {
+      margin: 0 0 10px;
+    }
+
+    .drone-img {
+      width: 520px;
+      position: absolute;
+      bottom: -200px; 
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .bottom-header {
+      background-color: #fff;
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
+
+
+
+
+    .content {
+  padding: 100px 40px;
+  background-color: #eeeeee;
+  text-align: center;
+}
+
+.equipe {
+  background-color: #ffffff;
+}
+
+
+.footer {
+  position: relative;
+  background-color: #2a2a2a;
+  padding-top: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.footer-top {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.footer-texto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-texto .logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-nav a:hover {
+  color: #20592c;
+}
+
+.footer-bottom {
+  padding: 80px 20px 30px;
+  font-size: 16px;
+  color: #218838;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    margin: 48px 0 36px 0;
+}
+
+.main-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #28a745 0%, #218838 100%);
+    color: #fff;
+    font-size: 1.18em;
+    font-weight: 600;
+    padding: 16px 38px;
+    border-radius: 32px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(40,167,69,0.13);
+    transition: background 0.3s, color 0.3s, transform 0.18s;
+    border: none;
+    letter-spacing: 0.5px;
+    margin: 0 8px;
+}
+
+.main-btn:hover, .main-btn:focus {
+    background: linear-gradient(90deg, #218838 0%, #28a745 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    text-decoration: none;
+}
+
+.main-btn.secondary {
+    background: linear-gradient(90deg, #fff 0%, #b5e7c4 100%);
+    color: #218838;
+    border: 2px solid #28a745;
+    box-shadow: 0 2px 12px rgba(40,167,69,0.08);
+}
+
+.main-btn.secondary:hover, .main-btn.secondary:focus {
+    background: linear-gradient(90deg, #e6ffe6 0%, #fff 100%);
+    color: #28a745;
+    border-color: #218838;
+}
