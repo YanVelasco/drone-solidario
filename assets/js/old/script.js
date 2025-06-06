@@ -7,7 +7,7 @@ function validateVolunteerForm() {
     const location = document.getElementById('location').value;
 
     if (!name || !email || !phone || !droneModel || !flightCapabilities || !location) {
-        alert('Dados salvos com sucesso!');
+        alert('Por favor, preencha todos os campos.');
         return false;
     }
 

@@ -166,7 +166,7 @@ section h2 {
 
 .eventos p,
 .noticias p {
-  font-size: 0.7em; /* ou 14px, se preferir */
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -278,6 +278,7 @@ section h2 {
   padding: 0.75rem 1rem;
   border: 1px solid #ddd;
   text-align: left;
+  font-size: 14px;
 }
 
 .tabela-voluntarios th {
@@ -355,7 +356,7 @@ h2 {
   max-width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   text-align: left;
   background-color: white;
 }
@@ -398,7 +399,7 @@ h2 {
   max-width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   background-color: white;
 }
 
