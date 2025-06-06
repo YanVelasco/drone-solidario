@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const nome = this.nome.value.trim();
+            const nome = this.nome.value.trim().toUpperCase();
             const telefone = this.telefone.value?.trim() || '';
             const email = this.email.value?.trim() || '';
             const regiao = this.regiao.value?.trim() || '';

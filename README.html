@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDR - Rede de Drones Reservistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #0779e4;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RDR - Rede de Drones Reservistas</h1>
+            <nav>
+                <ul>
+                    <li><a href="#visao-geral">Visão Geral</a></li>
+                    <li><a href="#estrutura-do-projeto">Estrutura do Projeto</a></li>
+                    <li><a href="#instrucoes-de-configuracao">Instruções de Configuração</a></li>
+                    <li><a href="#contribuicao">Contribuição</a></li>
+                    <li><a href="#licenca">Licença</a></li>
+                    <li><a href="#estilos-css">Estilos CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <section id="visao-geral">
+                <h2>Visão Geral</h2>
+                <p>A RDR – Rede de Drones Reservistas é uma iniciativa que une tecnologia e voluntariado para apoiar ações de emergência. Por meio da plataforma, voluntários com drones se cadastram para receber alertas e colaborar com autoridades em situações como enchentes e incêndios. O sistema oferece um painel colaborativo para acompanhar missões, enviar imagens e confirmar presença. A iniciativa conta com o apoio da Defesa Civil e outras instituições, e é conduzida por uma equipe de cinco integrantes, cujos nomes e fotos estão disponíveis na plataforma.</p>
+            </section>
+            <section id="estrutura-do-projeto">
+                <h2>Estrutura do Projeto</h2>
+                <p>O projeto é composto pelos seguintes arquivos e diretórios:</p>
+                <h3>HTML</h3>
+                <ul>
+                    <li><strong>index.html</strong>: Página inicial do site. Apresenta o título "Drone Solidário – Mapeamento aéreo para salvar vidas", uma breve descrição da iniciativa e botões para registro e mais informações. Inclui uma imagem de fundo de um drone sobrevoando uma área de desastre.</li>
+                    <li><strong>cadastro-voluntario.html</strong>: Contém o formulário de cadastro para voluntários. Inclui campos para nome completo, e-mail, telefone, modelo do drone, capacidades de voo e localização geográfica. Possui um botão "Salvar meu cadastro" para enviar o formulário.</li>
+                    <li><strong>cadastro-regiao.html</strong>: Destinada ao cadastro de regiões. Inclui um formulário semelhante ao de cadastro de voluntários, permitindo que os usuários insiram informações regionais relevantes.</li>
+                    <li><strong>detalhesCadDrones.html</strong>: Página de detalhes dos drones cadastrados.</li>
+                    <li><strong>gestao-droneiros.html</strong>: Página de gestão dos voluntários droneiros.</li>
+                    <li><strong>mainCadDrones.html</strong>: Página principal de cadastro de drones.</li>
+                    <li><strong>PoliticadePrivacidade.html</strong>: Página de Política de Privacidade.</li>
+                    <li><strong>SobreNos.html</strong>: Página Sobre Nós.</li>
+                    <li><strong>TermosdeUso.html</strong>: Página de Termos de Uso.</li>
+                </ul>
+                <h3>JavaScript</h3>
+                <ul>
+                    <li><strong>gestao-droneiros.js</strong>: Gerencia a interface de administração dos voluntários. Carrega e exibe os dados salvos no <code>localStorage</code>. Permite selecionar, excluir e convocar voluntários via e-mail ou WhatsApp. Integra-se com a página <code>detalhesCadDrones.html</code> para adicionar novos registros.</li>
+                    <li><strong>mapEventDiv.js</strong>: Controla os dois mapas interativos da plataforma. Exibe eventos fixos com ícones personalizados. Carrega dados CSV de fontes como INPE e Defesa Civil (queimadas, enchentes, vendavais, deslizamentos, acidentes e alertas de saúde). Utiliza Leaflet.js e PapaParse.js para renderização e parsing de dados. Atualiza contadores de eventos e exibe pop-ups informativos.</li>
+                    <li><strong>vlibras.js</strong>: Ativa o plugin VLibras para acessibilidade em Libras.</li>
+                    <li><strong>contAcesFC.js</strong>: Gerencia recursos de acessibilidade. Ativa/desativa o modo de alto contraste. Permite aumentar ou diminuir o tamanho da fonte. Salva as preferências do usuário no <code>localStorage</code> para manter a acessibilidade entre sessões.</li>
+                    <li><strong>dronenew.js</strong>: Responsável por carregar e exibir os modelos de drones disponíveis. Renderiza drones fixos e personalizados na tela de seleção. Permite que usuários adicionem novos modelos personalizados, armazenando-os no <code>localStorage</code>.</li>
+                    <li><strong>dronemain.js</strong>: Controla a lógica da página de cadastro de voluntários. Exibe detalhes do drone selecionado (fixo ou personalizado). Permite o envio de imagem e descrição para drones personalizados. Valida os campos do formulário e salva os dados do voluntário no <code>localStorage</code>. Redireciona o usuário após o cadastro com uma mensagem de agradecimento e instruções.</li>
+                </ul>
+                <h3>CSS</h3>
+                <ul>
+                    <li><strong>dronemain.css</strong>: Estilos aplicados à página de seleção de drones. Layout responsivo com flexbox para exibição dos modelos. Efeitos de hover com escala e sombra. Estilo futurista com fundo temático e texto com sombra. Suporte a diferentes tamanhos de tela com media queries.</li>
+                    <li><strong>style.css</strong>: Estilos gerais para formulários e containers. Design escuro com fundo translúcido e bordas arredondadas. Campos de formulário com foco em acessibilidade e contraste. Botões com gradiente verde e efeitos de hover. Estilo para tabelas de voluntários e convocações.</li>
+                    <li><strong>styleNew.css</strong>: Estilo principal da página inicial e mapas. Estilização de botões principais e secundários. Layout de grid para cards de eventos e voluntários. Estilo para mapas interativos e legendas. Tabelas de status e fontes oficiais com responsividade.</li>
+                    <li><strong>acessib.css</strong>: Estilos para o modo de alto contraste. Aplica fundo preto e texto branco em toda a interface. Links em amarelo com sublinhado. Tabelas, seções e cards adaptados para acessibilidade visual. Compatível com leitores de tela e preferências salvas via <code>localStorage</code>.</li>
+                    <li><strong>drone.css</strong>: Estilo base da identidade visual da plataforma. Layout do cabeçalho, navegação e rodapé com cores institucionais (verde e branco). Estilização de botões principais e secundários. Responsividade para dispositivos móveis. Integração com a identidade visual da RDR.</li>
+                    <li><strong>dronedet.css</strong>: Estilos específicos para a página de detalhes do drone. Imagens com <code>object-fit: contain</code> e sombras suaves. Layout limpo e responsivo para exibição de informações técnicas. Estilo para pré-visualização de imagem enviada pelo usuário.</li>
+                </ul>
+            </section>
+            <section id="instrucoes-de-configuracao">
+                <h2>Instruções de Configuração</h2>
+                <ol>
+                    <li>Clone este repositório em sua máquina local.</li>
+                    <li>Navegue até o diretório do projeto.</li>
+                    <li>Abra o arquivo <code>index.html</code> em um navegador para visualizar a página inicial.</li>
+                    <li>Utilize os links disponíveis para acessar as páginas de cadastro de voluntários e regiões.</li>
+                </ol>
+            </section>
+            <section id="contribuicao">
+                <h2>Contribuição</h2>
+                <p>Contribuições são bem-vindas! Se você deseja ajudar a melhorar o projeto, sinta-se à vontade para abrir um pull request ou relatar problemas.</p>
+            </section>
+            <section id="licenca">
+                <h2>Licença</h2>
+                <p>Este projeto é de código aberto e pode ser utilizado e modificado conforme necessário.</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
