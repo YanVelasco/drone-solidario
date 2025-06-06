@@ -49,6 +49,21 @@ window.adicionarDroneiroSolidario = function(dados) {
     carregarTabela();
 };
 
+// Função para marcar o primeiro checkbox da tabela por padrão
+function marcarPrimeiroCheckboxTabelaDroneiros() {
+    const tabela = document.getElementById('tabela-droneiros');
+    if (!tabela) return;
+    const primeiroCheckbox = tabela.querySelector('tbody tr input[type="checkbox"]');
+    if (primeiroCheckbox) {
+        primeiroCheckbox.checked = true;
+    }
+}
+
+// Chame essa função após o carregamento inicial da tabela
+window.addEventListener('DOMContentLoaded', function() {
+    marcarPrimeiroCheckboxTabelaDroneiros();
+});
+
 // Exclusividade dos checkboxes de envio
 document.addEventListener('DOMContentLoaded', function() {
     // Exclusividade dos checkboxes de envio
