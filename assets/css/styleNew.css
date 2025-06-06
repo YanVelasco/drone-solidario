@@ -428,4 +428,29 @@ h2 {
   text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  #tabela-droneiros thead {
+    display: none;
+  }
 
+  #tabela-droneiros tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+  }
+
+  #tabela-droneiros td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    /* justify-content: space-evenly; */
+  }
+
+  #tabela-droneiros td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+  }
+}

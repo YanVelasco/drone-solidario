@@ -8,13 +8,13 @@ function carregarTabela() {
     dados.forEach((item, idx) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td><input type="checkbox" class="row-check"></td>
-            <td>${item.nome}</td>
-            <td>${item.telefone}</td>
-            <td>${item.email}</td>
-            <td>${item.regiao}</td>
-            <td>${item.experiencia}</td>
-            <td>${item.modelo}</td>
+            <td data-label="Selecionar"><input type="checkbox" class="row-check"></td>
+            <td data-label="Nome Completo">${item.nome}</td>
+            <td data-label="Telefone">${item.telefone}</td>
+            <td data-label="E-mail">${item.email}</td>
+            <td data-label="Região para Atuação">${item.regiao}</td>
+            <td data-label="Nível de Experiência">${item.experiencia}</td>
+            <td data-label="Modelo">${item.modelo}</td>
         `;
         tbody.appendChild(tr);
     });
