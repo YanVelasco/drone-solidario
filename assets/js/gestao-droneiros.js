@@ -154,9 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 break; // Remove apenas o primeiro selecionado
             }
         }
-        // if (!excluiu) {
-        //     alert('Selecione um registro para excluir.');
-        // }
         // Após exclusão, marcar o primeiro checkbox disponível
         marcarPrimeiroCheckboxTabelaDroneiros();
     });
