@@ -109,28 +109,26 @@
     </form>
   </div>
 
-<<<<<<< HEAD
   <script src="../assets/js/dronemain.js"></script>
   <script src="../assets/js/dronenew.js"></script>
   <script>
-document.getElementById('cadastroForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const dados = {
-        nome: this.nome.value,
-        telefone: this.telefone.value,
-        email: this.email.value,
-        regiao: this.regiao.value,
-        experiencia: this.experience.value,
-        modelo: this.modelo.value || this.modeloDrone.value || ''
-    };
-    // Salva diretamente no localStorage para persistência
-    let lista = JSON.parse(localStorage.getItem("droneiros-solidarios-tabela") || "[]");
-    lista.push(dados);
-    localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(lista));
-    alert('Cadastro salvo na gestão de droneiros solidários!');
-});
+  document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const dados = {
+          nome: this.nome.value,
+          telefone: this.telefone.value,
+          email: this.email.value,
+          regiao: this.regiao.value,
+          experiencia: this.experience.value,
+          modelo: this.modelo.value || this.modeloDrone.value || ''
+      };
+      // Salva diretamente no localStorage para persistência
+      let lista = JSON.parse(localStorage.getItem("droneiros-solidarios-tabela") || "[]");
+      lista.push(dados);
+      localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(lista));
+      alert('Cadastro salvo na gestão de droneiros solidários!');
+  });
   </script>
-=======
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-texto">
@@ -163,6 +161,5 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
     <script src="../assets/js/old/contAcesG.js"></script>
     <script src="../assets/js/contAcesFC.js"></script>
 
->>>>>>> 3a06bb81ffc0719c353955f1e812a8e53804378f
 </body>
 </html>
