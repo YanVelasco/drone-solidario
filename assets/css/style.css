@@ -38,6 +38,12 @@ form label {
     font-weight: 500;
 }
 
+/* Garante que os títulos dos checkboxes fiquem com fonte branca */
+label[for="envia-email"],
+label[for="envia-whatsapp"] {
+    color: #fff !important;
+}
+
 form input, form select {
     padding: 12px 14px;
     border: none;
