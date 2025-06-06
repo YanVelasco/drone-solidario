@@ -1,4 +1,87 @@
+/* ===== MODO ALTO CONTRASTE - ACESSIBILIDADE ===== */
+
 .alto-contraste {
   background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Links */
+.alto-contraste a,
+.alto-contraste a:visited {
+  color: #ff0 !important; /* Links em amarelo */
+  text-decoration: underline;
+}
+
+/* Estrutura geral */
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste section,
+.alto-contraste main,
+.alto-contraste .voluntarios,
+.alto-contraste .grid,
+.alto-contraste .grid-voluntarios,
+.alto-contraste .lista-voluntarios,
+.alto-contraste .tabela-container,
+.alto-contraste .tabela-status-container,
+.alto-contraste .tabela-fontes-container,
+.alto-contraste .card {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Títulos */
+.alto-contraste h1,
+.alto-contraste h2,
+.alto-contraste h3,
+.alto-contraste h4,
+.alto-contraste h5,
+.alto-contraste h6,
+.alto-contraste .card h3,
+.alto-contraste .voluntarios h2,
+.alto-contraste section h2 {
+  color: #fff !important;
+}
+
+/* Tabelas */
+.alto-contraste table,
+.alto-contraste th,
+.alto-contraste td {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.alto-contraste .tabela-voluntarios th,
+.alto-contraste .tabela-status-eventos th,
+.alto-contraste .tabela-fontes-oficiais th {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+.alto-contraste .tabela-voluntarios tr:nth-child(even),
+.alto-contraste .tabela-status-eventos tr:nth-child(even),
+.alto-contraste .tabela-fontes-oficiais tr:nth-child(even) {
+  background-color: #222 !important;
+}
+
+/* Links dentro de tabelas */
+.alto-contraste .tabela-voluntarios a,
+.alto-contraste .tabela-status-eventos a,
+.alto-contraste .tabela-fontes-oficiais a {
+  color: #ff0 !important;
+  text-decoration: underline;
+}
+
+/* Área de destaque (topo) */
+.alto-contraste .bottom-header {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-bottom: 2px solid #fff !important;
+  padding-bottom: 1rem;
+}
+
+.alto-contraste .bottom-header h2,
+.alto-contraste .bottom-header p {
   color: #fff !important;
 }
