@@ -4,7 +4,8 @@ body {
   }
   
   h1, h2 {
-    color: #0077cc;
+    /* color: #0077cc; */
+    color: #28a745;
   }
   
   .drone-container {
@@ -27,7 +28,8 @@ body {
   
   .drone:hover {
     transform: scale(1.05);
-    border-color: #0077cc;
+    /* border-color: #0077cc; */
+    border-color: #28a745;
   }
   
   .drone img {
@@ -205,4 +207,9 @@ footer {
   min-height: 100vh;
   padding: 20px;
   /* color: #ffffff; */
+}
+
+.titulo-principal {
+  color: #198754; /* verde Bootstrap, ou personalize com outro valor */
+  font-weight: bold;
 }

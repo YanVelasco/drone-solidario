@@ -7,11 +7,41 @@ body {
     font-weight: 600;
   }
   
-  .drone-img {
+  /* .drone-img {
     max-height: 300px;
     object-fit: cover;
     border-radius: 10px;
+  } */
+
+  /* .drone-imgDet {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  } */
+
+  .drone-imgDet {
+    position: static !important;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }  
+  
+  /* Apenas para a imagem da home */
+  .drone-banner {
+    width: 520px;
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
+  
+
+
   
   #imagemPreview {
     max-width: 100%;

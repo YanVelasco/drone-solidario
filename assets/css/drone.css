@@ -224,3 +224,76 @@ body {
     color: #28a745;
     border-color: #218838;
 }
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-home {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .accessibility-tools {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .footer-texto {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-texto .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    height: 40px;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    padding: 40px 10px 20px;
+  }
+}
