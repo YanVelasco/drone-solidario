@@ -85,3 +85,11 @@
 .alto-contraste .bottom-header p {
   color: #fff !important;
 }
+
+/* Estilos adicionais para p, label e h2 no modo alto contraste */
+.alto-contraste p,
+.alto-contraste label,
+.alto-contraste h2 {
+  /* color: #fff !important; */
+  color: #111 !important;
+}
