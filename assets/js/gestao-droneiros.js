@@ -140,4 +140,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Exemplo de função de exclusão de registro
+    document.getElementById('btn-excluir').addEventListener('click', function() {
+        const tabela = document.getElementById('tabela-droneiros');
+        const linhas = tabela.querySelectorAll('tbody tr');
+        let excluiu = false;
+        for (let linha of linhas) {
+            const checkbox = linha.querySelector('input[type="checkbox"]');
+            if (checkbox && checkbox.checked) {
+                linha.remove();
+                excluiu = true;
+                break; // Remove apenas o primeiro selecionado
+            }
+        }
+        // if (!excluiu) {
+        //     alert('Selecione um registro para excluir.');
+        // }
+        // Após exclusão, marcar o primeiro checkbox disponível
+        marcarPrimeiroCheckboxTabelaDroneiros();
+    });
 });
