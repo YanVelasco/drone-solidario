@@ -75,5 +75,23 @@
 
   <script src="../assets/js/dronemain.js"></script>
   <script src="../assets/js/dronenew.js"></script>
+  <script>
+document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const dados = {
+        nome: this.nome.value,
+        telefone: this.telefone.value,
+        email: this.email.value,
+        regiao: this.regiao.value,
+        experiencia: this.experience.value,
+        modelo: this.modelo.value || this.modeloDrone.value || ''
+    };
+    // Salva diretamente no localStorage para persistência
+    let lista = JSON.parse(localStorage.getItem("droneiros-solidarios-tabela") || "[]");
+    lista.push(dados);
+    localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(lista));
+    alert('Cadastro salvo na gestão de droneiros solidários!');
+});
+  </script>
 </body>
 </html>

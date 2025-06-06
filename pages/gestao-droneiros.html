@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Droneiros Solidários</title>
+    <link rel="stylesheet" href="../assets/css/drone.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/styleNew.css">
+    <link rel="stylesheet" href="../assets/css/acessib.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- ...header igual ao index... -->
+    <header>
+    <div class="logo">
+      <img src="../assets/images/YUNEEC.png" alt="DRONES"> 
+      <span>RDR - Rede de Drones Reservistas</span>
+    </div>
+    <nav class="nav-home">
+      <a href="../index.html">HOME</a>
+      <a href="../login.html">LOGIN</a>
+      <a href="../cadastro-voluntario.html">CADASTRO</a>
+      <a href="SobreNos.html">SOBRE NÓS</a>
+    </nav>
+    <div class="accessibility-tools">
+      <button aria-label="Ativar alto contraste" title="Ativar alto contraste"><i class="fas fa-adjust"></i></button>
+      <button aria-label="Aumentar fonte"><i class="fas fa-plus fa-lg"></i></button>
+      <button aria-label="Reduzir fonte"><i class="fas fa-minus fa-lg"></i></button>
+    </div>
+    </header>
+
+    <main>
+        <div class="container py-4">
+            <h1 class="mb-4 text-center text-success">Gestão de Droneiros Solidários</h1>
+            <div class="mb-4">
+                <label for="convocacao-texto" class="form-label fw-bold">Texto de Convocação</label>
+                <textarea id="convocacao-texto" class="form-control" rows="3">Você foi convocado a ajudar como voluntário no mapeamento de um local de evento. Entre na página www.drone_dolidario.com.br, para confirmar para receber mais instruções e confirmar sua presença na equipe de voluntários no local.</textarea>
+                <div class="form-check form-check-inline mt-2">
+                    <input class="form-check-input" type="checkbox" id="envia-email" checked>
+                    <label class="form-check-label" for="envia-email">Enviar por E-mail</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="envia-whatsapp">
+                    <label class="form-check-label" for="envia-whatsapp">Enviar por WhatsApp</label>
+                </div>
+                <button id="btn-convocar" class="btn btn-success ms-2 mt-2">Envia Convocação</button>
+            </div>
+            <div class="mb-3">
+                <button id="btn-excluir" class="btn btn-danger">Excluir Registro</button>
+            </div>
+            <div class="table-responsive">
+                <table id="tabela-droneiros" class="table table-bordered table-striped align-middle">
+                    <thead class="table-success">
+                        <tr>
+                            <th><input type="checkbox" id="check-all"></th>
+                            <th>Nome Completo</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Região para Atuação</th>
+                            <th>Nível de Experiência</th>
+                            <th>Modelo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Registros adicionados via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- ...footer igual ao index... -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-texto">
+          <img src="../assets/images/YUNEEC.png" alt="Logo RDR" class="logo" />
+          <nav class="footer-nav">
+            <a href="PoliticadePrivacidade.html">Política de Privacidade </a>
+            <a href="TermosdeUso.html">Termos de Uso</a>
+            <a href="SobreNos.html">Sobre Nós</a>
+            <a href="#">Suporte</a>
+            <a href="#">Contato</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 RDR - Rede de Drones Reservistas - Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script src="../assets/js/gestao-droneiros.js"></script>
+</body>
+</html>
