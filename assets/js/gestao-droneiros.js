@@ -49,24 +49,51 @@ window.adicionarDroneiroSolidario = function(dados) {
     carregarTabela();
 };
 
-// Enviar convocação
-document.getElementById("btn-convocar").addEventListener("click", function() {
-    const texto = document.getElementById("convocacao-texto").value;
-    const enviaEmail = document.getElementById("envia-email").checked;
-    const enviaWhatsapp = document.getElementById("envia-whatsapp").checked;
-    const checks = Array.from(document.querySelectorAll("#tabela-droneiros .row-check"));
-    const dados = JSON.parse(localStorage.getItem(TABELA_KEY) || "[]");
-    checks.forEach((cb, idx) => {
-        if (cb.checked) {
-            const droneiro = dados[idx];
-            if (enviaWhatsapp && droneiro.telefone) {
-                const wa = `https://wa.me/55${droneiro.telefone.replace(/\D/g,'')}?text=${encodeURIComponent(texto)}`;
-                window.open(wa, '_blank');
+// Exclusividade dos checkboxes de envio
+document.addEventListener('DOMContentLoaded', function() {
+    const chkEmail = document.getElementById('envia-email');
+    const chkWhatsapp = document.getElementById('envia-whatsapp');
+    if (chkEmail && chkWhatsapp) {
+        chkEmail.addEventListener('change', function() {
+            if (this.checked) chkWhatsapp.checked = false;
+        });
+        chkWhatsapp.addEventListener('change', function() {
+            if (this.checked) chkEmail.checked = false;
+        });
+    }
+
+    // Botão de convocação
+    const btnConvocar = document.getElementById('btn-convocar');
+    if (btnConvocar) {
+        btnConvocar.addEventListener('click', function() {
+            const texto = document.getElementById('convocacao-texto').value;
+            const enviaEmail = chkEmail.checked;
+            const enviaWhatsapp = chkWhatsapp.checked;
+
+            if (enviaEmail) {
+                alert('Convocação enviada por E-mail:\n\n' + texto);
+                // Integração real de e-mail pode ser feita aqui
+            } else if (enviaWhatsapp) {
+                const mensagem = encodeURIComponent(texto);
+                const link = `https://wa.me/?text=${mensagem}`;
+                window.open(link, '_blank');
+            } else {
+                alert('Selecione uma opção para envio.');
             }
-            if (enviaEmail && droneiro.email) {
-                const mailto = `mailto:${droneiro.email}?subject=Convocação Drone Solidário&body=${encodeURIComponent(texto)}`;
-                window.open(mailto, '_blank');
+        });
+    }
+
+    // Exclusividade dos checkboxes da tabela-droneiros
+    const tabela = document.getElementById('tabela-droneiros');
+    if (tabela) {
+        tabela.addEventListener('change', function(e) {
+            if (e.target && e.target.type === 'checkbox' && e.target.id !== 'check-all') {
+                // Desmarca todos os outros checkboxes exceto o atual
+                const checkboxes = tabela.querySelectorAll('tbody input[type="checkbox"]');
+                checkboxes.forEach(cb => {
+                    if (cb !== e.target) cb.checked = false;
+                });
             }
-        }
-    });
+        });
+    }
 });

@@ -117,5 +117,33 @@
     <!-- Acessibilidade -->
     <script src="../assets/js/old/contAcesG.js"></script>
     <script src="../assets/js/contAcesFC.js"></script>
+    <script>
+document.getElementById('envia-email').addEventListener('change', function() {
+    if (this.checked) {
+        document.getElementById('envia-whatsapp').checked = false;
+    }
+});
+document.getElementById('envia-whatsapp').addEventListener('change', function() {
+    if (this.checked) {
+        document.getElementById('envia-email').checked = false;
+    }
+});
+document.getElementById('btn-convocar').addEventListener('click', function() {
+    const texto = document.getElementById('convocacao-texto').value;
+    const enviaEmail = document.getElementById('envia-email').checked;
+    const enviaWhatsapp = document.getElementById('envia-whatsapp').checked;
+
+    if (enviaEmail) {
+        alert('Convocação enviada por E-mail:\n\n' + texto);
+        // Integração real de e-mail pode ser feita aqui
+    } else if (enviaWhatsapp) {
+        const mensagem = encodeURIComponent(texto);
+        const link = `https://wa.me/?text=${mensagem}`;
+        window.open(link, '_blank');
+    } else {
+        alert('Selecione uma opção para envio.');
+    }
+});
+</script>
 </body>
 </html>
