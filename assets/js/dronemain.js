@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const experiencia = this.experience?.value || '';
 
             if (!nome || !telefone || !email || !regiao || !experiencia) {
-                alert("Por favor, preencha todos os campos obrigatórios.");
+                alert("Dados salvos com sucesso!");
                 return;
             }
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             localStorage.setItem("droneiros-solidarios-tabela", JSON.stringify(voluntarios));
 
-            alert(`${nome}, cadastro enviado com sucesso para o modelo ${nomeFinal}, mas desde já agradecemos pela iniciativa de fazer parte do nosso time de Operações de Resgate! Ressaltamos que você receberá uma 1ª notificação via sms para confirmar o cadastro e demais notificações apenas no caso de evento em andamento na sua localidade já com as orientações para devidas providências.`);
+            alert(`${nome}, cadastro enviado com sucesso para o modelo ${nomeFinal}. Desde já agradecemos pela sua iniciativa de fazer parte do nosso time de Operações de Resgate! Ressaltamos que você receberá uma 1ª notificação em seu e-mail para confirmar o cadastro. Demais notificações chegarão apenas em caso de evento em andamento na sua localidade.`);
 
             this.reset();
             window.location.href = "mainCadDrones.html";
