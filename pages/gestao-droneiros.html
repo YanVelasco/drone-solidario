@@ -137,8 +137,25 @@ document.getElementById('btn-convocar').addEventListener('click', function() {
         alert('Convocação enviada por E-mail:\n\n' + texto);
         // Integração real de e-mail pode ser feita aqui
     } else if (enviaWhatsapp) {
+        // Seleciona o primeiro registro marcado na tabela
+        const tabela = document.getElementById('tabela-droneiros');
+        const linhas = tabela.querySelectorAll('tbody tr');
+        let telefone = '';
+        for (let linha of linhas) {
+            const checkbox = linha.querySelector('input[type="checkbox"]');
+            if (checkbox && checkbox.checked) {
+                telefone = linha.cells[2].textContent.trim();
+                break;
+            }
+        }
+        if (!telefone) {
+            alert('Selecione um droneiro na tabela para enviar pelo WhatsApp.');
+            return;
+        }
+        // Remove caracteres não numéricos do telefone
+        const telefoneLimpo = telefone.replace(/\D/g, '');
         const mensagem = encodeURIComponent(texto);
-        const link = `https://wa.me/?text=${mensagem}`;
+        const link = `https://wa.me/${telefoneLimpo}/?text=${mensagem}`;
         window.open(link, '_blank');
     } else {
         alert('Selecione uma opção para envio.');

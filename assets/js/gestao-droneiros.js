@@ -51,6 +51,7 @@ window.adicionarDroneiroSolidario = function(dados) {
 
 // Exclusividade dos checkboxes de envio
 document.addEventListener('DOMContentLoaded', function() {
+    // Exclusividade dos checkboxes de envio
     const chkEmail = document.getElementById('envia-email');
     const chkWhatsapp = document.getElementById('envia-whatsapp');
     if (chkEmail && chkWhatsapp) {
@@ -62,6 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Exclusividade dos checkboxes da tabela-droneiros
+    const tabela = document.getElementById('tabela-droneiros');
+    if (tabela) {
+        tabela.addEventListener('change', function(e) {
+            if (e.target && e.target.type === 'checkbox' && e.target.id !== 'check-all') {
+                const checkboxes = tabela.querySelectorAll('tbody input[type="checkbox"]');
+                checkboxes.forEach(cb => {
+                    if (cb !== e.target) cb.checked = false;
+                });
+            }
+        });
+    }
+
     // Botão de convocação
     const btnConvocar = document.getElementById('btn-convocar');
     if (btnConvocar) {
@@ -70,29 +84,44 @@ document.addEventListener('DOMContentLoaded', function() {
             const enviaEmail = chkEmail.checked;
             const enviaWhatsapp = chkWhatsapp.checked;
 
+            // Busca o e-mail do registro selecionado na tabela
+            let emailSelecionado = '';
+            let telefoneSelecionado = '';
+            if (tabela) {
+                const checked = tabela.querySelector('tbody input[type="checkbox"]:checked');
+                if (checked) {
+                    const tr = checked.closest('tr');
+                    // Colunas: [checkbox, nome, telefone, email, regiao, experiencia]
+                    const tds = tr.querySelectorAll('td');
+                    emailSelecionado = tds[3]?.textContent.trim() || '';
+                    telefoneSelecionado = tds[2]?.textContent.replace(/\D/g, '') || '';
+                }
+            }
+
             if (enviaEmail) {
-                alert('Convocação enviada por E-mail:\n\n' + texto);
-                // Integração real de e-mail pode ser feita aqui
+                if (!emailSelecionado) {
+                    alert('Selecione um registro na tabela para enviar por e-mail.');
+                    return;
+                }
+                const assunto = encodeURIComponent('Convocação Voluntário RDR');
+                const corpo = encodeURIComponent(texto);
+                window.location.href = `mailto:${emailSelecionado}?subject=${assunto}&body=${corpo}`;
             } else if (enviaWhatsapp) {
+                if (!telefoneSelecionado) {
+                    alert('Selecione um registro na tabela para enviar por WhatsApp.');
+                    return;
+                }
                 const mensagem = encodeURIComponent(texto);
-                const link = `https://wa.me/?text=${mensagem}`;
+                // Formato internacional do WhatsApp: 55 + DDD + número (ajuste conforme necessário)
+                let numero = telefoneSelecionado;
+                if (numero.length < 11) {
+                    alert('Telefone inválido para envio via WhatsApp.');
+                    return;
+                }
+                const link = `https://wa.me/55${numero}?text=${mensagem}`;
                 window.open(link, '_blank');
             } else {
                 alert('Selecione uma opção para envio.');
-            }
-        });
-    }
-
-    // Exclusividade dos checkboxes da tabela-droneiros
-    const tabela = document.getElementById('tabela-droneiros');
-    if (tabela) {
-        tabela.addEventListener('change', function(e) {
-            if (e.target && e.target.type === 'checkbox' && e.target.id !== 'check-all') {
-                // Desmarca todos os outros checkboxes exceto o atual
-                const checkboxes = tabela.querySelectorAll('tbody input[type="checkbox"]');
-                checkboxes.forEach(cb => {
-                    if (cb !== e.target) cb.checked = false;
-                });
             }
         });
     }
